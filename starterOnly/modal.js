@@ -45,7 +45,7 @@ const loc5 = document.getElementById ('location5');
 const loc6 = document.getElementById ('location6');
 
 const nameFormat = /(.*[a-z]){2}/i;
-const mailFormat = /^[-a-z0-9~!$%^&*_=+}{\'?]+(\.[-a-z0-9~!$%^&*_=+}{\'?]+)*@([a-z0-9_][-a-z0-9_]*(\.[-a-z0-9_]+)*\.(aero|arpa|biz|com|coop|edu|gov|info|int|mil|museum|name|net|org|pro|travel|mobi|[a-z][a-z])|([0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}))(:[0-9]{1,5})?$/;
+const mailFormat = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 const dateFormat = /^\d{4}\-(0?[1-9]|1[012])\-(0?[1-9]|[12][0-9]|3[01])$/;
 const numbers = /^[0-9]+$/;
 
@@ -80,8 +80,8 @@ function validate () {
   if (!firstName.value.match(nameFormat) || firstName.value == ' ' || firstName.value == null || firstName.value.length < 2) {
     errorFirstName.innerText = 'Entrez 2 caractères ou plus pour ce champ.';
     errorFirstName.style.color = 'red';
-    errorFirstName.style.fontSize = '0.8rem';
-    errorFirstName.style.marginTop = '10px';
+    errorFirstName.style.fontSize = '12px';
+    errorFirstName.style.marginTop = '5px';
     firstName.style.border = 'solid red 2px';
   } else {
     errorFirstName.style.display = 'none';
@@ -92,8 +92,8 @@ function validate () {
     if (!lastName.value.match(nameFormat) || lastName.value == ' ' || lastName.value == null || lastName.value.length < 2) { 
       errorLastName.innerText = 'Entrez 2 caractères ou plus pour ce champ.';
       errorLastName.style.color = 'red';
-      errorLastName.style.fontSize = '0.8rem';
-      errorLastName.style.marginTop = '10px';
+      errorLastName.style.fontSize = '12px';
+      errorLastName.style.marginTop = '5px';
       lastName.style.border = 'solid red 2px';      
   }  else {
     errorLastName.style.display = 'none';
@@ -104,8 +104,8 @@ function validate () {
     if (!mailFormat.test(mail.value)) { 
       errorMail.innerText = 'Renseignez une addresse mail valide';
       errorMail.style.color = 'red';
-      errorMail.style.fontSize = '0.8rem';
-      errorMail.style.marginTop = '10px';
+      errorMail.style.fontSize = '12px';
+      errorMail.style.marginTop = '5px';
       mail.style.border = 'solid red 2px';
   } else {
     errorMail.style.display = 'none';
@@ -116,8 +116,9 @@ function validate () {
   if (!birthDate.value.match(dateFormat)) { 
     errorBirthDate.innerText = 'Remplissez votre date danniversaire';
     errorBirthDate.style.color = 'red';
-    errorBirthDate.style.fontSize = '0.8rem';
-    errorBirthDate.style.marginTop = '10px';
+    errorBirthDate.style.fontSize = '12px';
+    errorBirthDate.style.marginTop = '5px';
+    errorBirthDate.style.marginBottom = '5px';
     birthDate.style.border = 'solid red 2px';
     } else {
     errorBirthDate.style.display = 'none';
@@ -128,8 +129,8 @@ function validate () {
   if (!quantity.value.match(numbers)) { 
     errorQuantity.innerText = 'Indiquez un nombre';
     errorQuantity.style.color = 'red';
-    errorQuantity.style.fontSize = '0.8rem';
-    errorQuantity.style.marginTop = '10px';
+    errorQuantity.style.fontSize = '12px';
+    errorQuantity.style.marginTop = '5px';
     quantity.style.border = 'solid red 2px';
   } else {
     errorQuantity.style.display = 'none';
@@ -140,8 +141,8 @@ function validate () {
   if (!loc1.checked && !loc2.checked && !loc3.checked && !loc4.checked && !loc5.checked && !loc6.checked) { 
     errorLocation.innerText = 'Choisissez une ville';
     errorLocation.style.color = 'red';
-    errorLocation.style.fontSize = '0.8rem';
-    errorLocation.style.marginTop = '10px';          
+    errorLocation.style.fontSize = '12px';
+    errorLocation.style.marginTop = '5px';          
   } else {
     errorLocation.style.display = 'none';
     radioChecked = true;
@@ -150,9 +151,7 @@ function validate () {
   if (!validation.checked) {
     errorValidation.innerText = 'Vérifiez que vous acceptez les termes et conditions';
     errorValidation.style.color = 'red';
-    errorValidation.style.fontSize = '0.8rem';
-    errorValidation.style.marginTop = '10px';
-    errorValidation.style.marginBottom = '20px';
+    errorValidation.style.fontSize = '12px';
   } else {
     errorValidation.style.display = 'none';
     conditionsChecked = true;
