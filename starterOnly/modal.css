@@ -1,3 +1,13 @@
+@keyframes modalopen {
+  from {
+    opacity: 0;
+    transform: translateY(-150px);
+  }
+  to {
+    opacity: 1;
+  }
+}
+
 :root {
   --font-default: "DM Sans", Arial, Helvetica, sans-serif;
   --font-slab: var(--font-default);
@@ -92,7 +102,7 @@ img {
 
 
 
- @media screen and (max-width: 540px) {
+@media screen and (max-width: 540px) {
   .topnav a {display: none;}
   .topnav a.icon {
     float: right;
@@ -136,6 +146,28 @@ main {
   padding: 10px;
   font-family: var(--font-slab);
 }
+
+/* Validation message */
+#validation-message {
+  width: 486px;
+  margin: auto;
+  padding: 50px 10px;
+  position: absolute;
+  left: 33%;
+  top:80%;
+  z-index: 2;
+  border: #279e7a solid 2px;
+  color: #279e7a;
+  font-weight: bold;
+  background-color: white;
+  justify-content: center;
+  display: none;
+}
+
+#validation-message h3 {
+  margin-left: 67px;
+}
+
 
 /* Modal form */
 
@@ -333,6 +365,28 @@ input[data-error]::after {
   cursor: pointer;
   border: 0;
 }
+
+#confirmation {
+  height: 754px;
+  width: 66%;
+  margin: auto;
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+}
+
+#confirmation h1 {
+  text-align: center;
+  font-size: 2rem;
+}
+
+#confirmation .btn-close {
+  position: absolute;
+  bottom: 20px;
+  left : 32%;
+}
+
+
 /* custom select styles */
 .custom-select {
   position: relative;
@@ -514,16 +568,6 @@ footer {
   .copyrights {
     margin-top: 50px;
     text-align: center;
-  }
-}
-
-@keyframes modalopen {
-  from {
-    opacity: 0;
-    transform: translateY(-150px);
-  }
-  to {
-    opacity: 1;
   }
 }
 
