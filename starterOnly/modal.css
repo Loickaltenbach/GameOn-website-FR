@@ -28,6 +28,7 @@ body {
   font-family: var(--font-default);
   font-size: 18px;
   max-width: 1300px;
+  min-width: 341px;
   margin: 0 auto;
 }
 
@@ -73,27 +74,22 @@ img {
 }
 
 main {
-  font-size: 130%;
+  font-size: 100%;
   font-weight: bolder;
   color: black;
-  padding-top: 0.5vw;
   padding-left: 2vw;
   padding-right: 2vw;
-  margin: 1px 20px 15px;
+  margin: 1px 0px 15px;
   border-radius: 2rem;
   text-align: justify;
-
-
 }
 
 .modal-btn {
-  font-size: 145%;
+  font-size: 100%;
   background: #fe142f;
   display: flex;
   margin: auto;
-  padding: 2em;
   color: #fff;
-  padding: 0.75rem 2.5rem;
   border-radius: 1rem;
   cursor: pointer;
 }
@@ -134,8 +130,6 @@ main {
 
 .button {
   background: #fe142f;
-  margin-top: 0.5em;
-  padding: 1em;
   color: #fff;
   border-radius: 15px;
   cursor: pointer;
@@ -163,7 +157,7 @@ main {
 }
 
 .content {
-  margin: 5% auto;
+  margin: 8% auto;
   width: 100%;
   max-width: 500px;
   animation-name: modalopen;
@@ -206,7 +200,6 @@ input {
   font-size: 0.4em;
   color: #e54858;
   display: block;
-  margin-top: 7px;
   margin-bottom: 7px;
   text-align: right;
   line-height: 0.3;
@@ -421,13 +414,11 @@ input[data-error]::after {
   font-size: 16px;
 }
 .hero-section {
-  min-height: 93vh;
   border-radius: 10px;
   display: grid;
   grid-template-columns: repeat(12, 1fr);
   overflow: hidden;
   box-shadow: 0 2px 7px 2px rgba(0, 0, 0, 0.2);
-  margin-bottom: 10px;
 }
 .hero-content {
   padding: 51px 67px;
@@ -436,7 +427,6 @@ input[data-error]::after {
   color: #fff;
   position: relative;
   text-align: left;
-  min-width: 424px;
 }
 .hero-content::after {
   content: "";
@@ -457,9 +447,9 @@ input[data-error]::after {
   white-space: nowrap;
 }
 .hero-text {
-  width: 146%;
+  width: 100%;
   font-weight: normal;
-  margin-top: 57px;
+  margin-top: 20px;
   padding: 0;
 }
 .btn-signup {
@@ -468,7 +458,7 @@ input[data-error]::after {
   font-size: 1.3rem;
   padding: 15px 23px;
   margin: 0;
-  margin-top: 59px;
+  margin-top: 20px;
 }
 .hero-img {
   grid-column: span 8;
@@ -483,7 +473,7 @@ input[data-error]::after {
   color: #fe142f;
   padding: 0;
   font-size: 1rem;
-  margin: 60px 0 30px;
+  margin: 0 0 30px;
   font-weight: bolder;
 }
 .hero-section > .btn-signup {
@@ -494,6 +484,8 @@ footer {
   padding-right: 2vw;
   margin: 0 20px;
 }
+
+/* RESPONSIVE PART */
 @media screen and (max-width: 800px) {
   .topnav a {
     display: none;
@@ -524,7 +516,7 @@ footer {
   .hero-content {
     background: #fff;
     color: #000;
-    padding: 0px;
+    padding: 10px;
   }
   .hero-content::after {
     content: unset;
@@ -533,16 +525,16 @@ footer {
     display: none;
   }
   .hero-headline {
-    font-size: 3.2rem;
+    font-size: 2rem;
     white-space: normal;
   }
   .hero-text {
     width: unset;
-    font-size: 1.2rem;
+    font-size: 1rem;
   }
   .hero-img img {
-    border-radius: 10px;
-    margin-top: 40px;
+    border-radius: 30px;
+    padding: 10px;
   }
   .hero-section > .btn-signup {
     display: block;
@@ -550,7 +542,6 @@ footer {
     padding: 12px 35px;
   }
   .copyrights {
-    margin-top: 50px;
     text-align: center;
   }
 }
